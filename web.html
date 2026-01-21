@@ -1,46 +1,351 @@
-<html>
+<!DOCTYPE html>
+<html lang="vi">
+
 <head>
-	<title> trang wed dau tien </title>
-	<meta charset="utf-8">
+<meta charset="UTF-8">
+<title>Bài làm farm 10 của Thiện</title>
+
+<style>
+/* ================= BODY ================= */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(to bottom,#eaf3ff,#ffffff);
+}
+.delete-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+    font-size:16px;
+    opacity:0.6;
+    transition:0.3s;
+}
+
+.delete-btn:hover{
+    opacity:1;
+    transform:scale(1.2);
+}
+
+
+/* ================= HEADER ================= */
+header{
+    position:relative;
+    background:linear-gradient(to right,#2196f3,#21cbf3);
+    color:white;
+    padding:40px 20px;
+    text-align:center;
+}
+
+.logo{
+    position:absolute;
+    top:50%;
+    left:25px;
+    transform:translateY(-50%);
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    object-fit:cover;
+    background:white;
+    padding:6px;
+    box-shadow:0 6px 15px rgba(0,0,0,.35);
+}
+
+/* ================= NAV ================= */
+nav{
+    display:flex;
+    justify-content:center;
+    background:linear-gradient(270deg,
+        rgba(255,99,132,.35),
+        rgba(255,159,64,.35),
+        rgba(255,205,86,.35),
+        rgba(75,192,192,.35),
+        rgba(54,162,235,.35),
+        rgba(153,102,255,.35)
+    );
+    background-size:400% 400%;
+    animation:rainbow 22s linear infinite;
+}
+
+@keyframes rainbow{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+nav a{
+    padding:15px 26px;
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.35s;
+}
+
+nav a:hover,
+nav a.active{
+    background:rgba(255,255,255,.4);
+    border-radius:25px;
+    color:black;
+}
+
+/* ================= CONTAINER ================= */
+.container{
+    max-width:1000px;
+    margin:35px auto;
+    padding:0 20px;
+}
+
+/* ================= CONTENT ================= */
+.content{
+    display:none;
+    padding:32px;
+    margin-bottom:30px;
+    border-radius:20px;
+    background:rgba(255,255,255,.9);
+    backdrop-filter:blur(6px);
+    box-shadow:0 12px 25px rgba(0,0,0,.15);
+    animation:fadeUp .6s ease;
+}
+
+@keyframes fadeUp{
+    from{opacity:0;transform:translateY(25px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+.content.show{display:block}
+
+/* ================= 2 CỘT ================= */
+.two-col{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    align-items:center;
+}
+
+/* ================= IMAGE ================= */
+.image-box{
+    height:260px;
+    border-radius:16px;
+    overflow:hidden;
+    box-shadow:0 6px 15px rgba(0,0,0,.25);
+}
+
+.image-box img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.6s;
+}
+
+.image-box:hover img{
+    transform:scale(1.05);
+}
+
+/* ================= TEXT ================= */
+h2{
+    color:#2196f3;
+    border-left:5px solid #2196f3;
+    padding-left:12px;
+}
+
+/* ================= COMMENT ================= */
+.comment-form{
+    background:rgba(255,255,255,.8);
+    padding:20px;
+    border-radius:16px;
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+    margin-bottom:25px;
+}
+
+.comment-form input,
+.comment-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:12px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-family:inherit;
+}
+
+.comment-form button{
+    padding:10px 22px;
+    border:none;
+    border-radius:20px;
+    background:linear-gradient(to right,#2196f3,#21cbf3);
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.comment-item{
+    background:rgba(255,255,255,.85);
+    padding:15px 18px;
+    border-radius:14px;
+    margin-bottom:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+}
+
+.comment-item strong{
+    color:#2196f3;
+}
+
+.comment-time{
+    font-size:12px;
+    color:#777;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:768px){
+    .two-col{grid-template-columns:1fr}
+    .image-box{height:220px}
+}
+
+/* ================= FOOTER ================= */
+footer{
+    text-align:center;
+    padding:20px;
+    color:white;
+    background:linear-gradient(270deg,#2196f3,#03a9f4,#00bcd4);
+}
+</style>
 </head>
+
 <body>
-	<p><strong>chu de F : TRANG WEB CUA THETHIEN </strong></p>
-	<p><em> thong thuong DOAN THE THIEN </em></p>
-	<h1 id='#TOPIC1'> tieu de 1 </h1> 
-	<h2><mark> Doan The Thien</mark> </h2> 
-	<strong> 12a5 </strong> 
-	<p> Duong dan : <a href="utf-8"> </a></p>
-</body>
-</body>
-	<ol>
-		<li start ='A'>hello may ban </li>
-		<li>DOAN THE THIEN 12A5</li>
-		<li> lap trinh HTML </li>
-	</ol>
-	<p>DANH SACH THANH VIEN</p>
-		<TABLE border="2">
-			<tr>STT </tr>
-				<td>1</td><td>2</td>
-			<tr>HO VA TEN </tr>
-				<td>doanthethien</td>
-				<td>sieu nhan </td>
 
-			<tr>Chuc vu </tr> 
-				<td>EM </td>
-				<td>:))</td>
+<header>
+    <img src="C:\Users\THE THIEN\OneDrive\Pictures\Saved Pictures\453065502_1028566862605521_2447556437741570217_n.jpg" class="logo">
+    <h1>Trang Web Tạo Cho Vui của Miềng </h1>
+    <p> THẾ THIỆN 🙂 - Học Sinh 12A5 </p>
+</header>
 
-		</TABLE>
-	<body>
-		<img src="C:\Users\THE THIEN\OneDrive\Pictures\Saved Pictures\453065502_1028566862605521_2447556437741570217_n.jpg " alt=" THPT GIO LINH " width="200
-		"height="200">
-		<td>
-			<video src="C:\Users\THE THIEN\Videos\Captures\2.mp4"controls
-			 alt= "laptrinh" width="300"height="200">
-				
-			</video>
-		</td>
-	<body>
-		<iframe src="C:\Users\THE THIEN\Downloads\554478285_31471064472542261_7225227087452442591_n.mp4" width="400" height="200"></iframe>
-	</body>	
+<nav>
+    <a class="active" onclick="showGroup('home',this)">Trang chủ</a>
+    <a onclick="showGroup('about',this)">Giới thiệu</a>
+    <a onclick="showGroup('services',this)">Dịch vụ</a>
+    <a onclick="showGroup('contact',this)">Liên hệ</a>
+    <a onclick="showGroup('comment',this)">Nhận xét</a>
+</nav>
+
+<div class="container">
+
+<!-- ===== HOME ===== -->
+<div class="content home show">
+<div class="two-col">
+<div class="image-box"><img src="C:\Users\THE THIEN\Downloads\c81a9a9b-968d-424b-b8a9-a82ea0fb8f1c.jpg"></div>
+<div>
+<h2>Trang chủ</h2>
+<p>Chào mừng bạn đến với website của miềngggg .</p>
+<p>Nhất cầu lông ĐÔI NAM ba năm liền .</p>
+</div>
+</div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<div class="content about">
+<div class="two-col">
+<div class="image-box"><img src="C:\Users\THE THIEN\Downloads\ChatGPT Image 20_44_22 5 thg 1, 2026.png"></div>
+<div>
+<h2>Giới thiệu</h2>
+<p>Bài ni làm ra chủ yếu farm điểm 10 của cô thầy dạy tin :))</p>
+<p>mục đích duy nhất là OAI </p>
+</div>
+</div>
+</div>
+
+<!-- ===== SERVICES ===== -->
+<div class="content services">
+<div class="two-col">
+<div class="image-box"><img src="C:\Users\THE THIEN\Downloads\8deefd3e36080085fce3ca3f90e78c28.jpg"></div>
+<div>
+<h2>Dịch vụ</h2>
+<ul>
+<li>📘 ĐẦU TƯ VÀO HDPE LÀ NGON LUÔN </li>
+<li>🎉 QUÂN ĐỘI - KỶ LUẬT LÀ TRÊN HẾT </li>
+<li>🎓 CỐ GẮNG CHO KỲ THI THPT QUỐC GIA </li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ===== CONTACT ===== -->
+<div class="content contact">
+<div class="two-col">
+<div class="image-box"><img src="C:\Users\THE THIEN\Downloads\e0241f9d-5ec4-4d2a-bed0-c04c20147ce6.jpg"></div>
+<div>
+<h2>Liên hệ</h2>
+<p>📧 thethien322008@gmail.com</p>
+<p>📍 Lớp 12A5 – THPT Gio Linh</p>
+</div>
+</div>
+</div>
+
+<!-- ===== COMMENT ===== -->
+<div class="content comment">
+<h2>Nhận xét của mọi người</h2>
+
+<div class="comment-form">
+<input type="text" id="name" placeholder="Tên chi khai mau ! ">
+<textarea id="message" placeholder="Nhập nhận xét đi nào cobe ..."></textarea>
+<button onclick="addComment()">Gửi lẹ đi </button>
+</div>
+
+<div id="comment-list"></div>
+</div>
+
+</div>
+
+<footer>
+<p>💙 bài ni là của Đoàn Thế Thiện ĐẲNG CẤP 12A5 :) </p>
+</footer>
+
+<script>
+function showGroup(group, el){
+    document.querySelectorAll('.content').forEach(c=>c.classList.remove('show'));
+    document.querySelectorAll('nav a').forEach(a=>a.classList.remove('active'));
+    document.querySelectorAll('.'+group).forEach(c=>c.classList.add('show'));
+    el.classList.add('active');
+}
+
+function addComment(){
+    let name=document.getElementById("name").value.trim();
+    let msg=document.getElementById("message").value.trim();
+    if(!name || !msg){ alert("Nhập đầy đủ thông tin"); return; }
+
+    let data=JSON.parse(localStorage.getItem("comments"))||[];
+    data.push({name:name,msg:msg,time:new Date().toLocaleString()});
+    localStorage.setItem("comments",JSON.stringify(data));
+
+    document.getElementById("name").value="";
+    document.getElementById("message").value="";
+    renderComments();
+}
+
+function renderComments(){
+    let data = JSON.parse(localStorage.getItem("comments")) || [];
+    let list = document.getElementById("comment-list");
+    list.innerHTML = "";
+
+    data.forEach((c, index) => {
+        list.innerHTML += `
+        <div class="comment-item">
+            <div style="display:flex;justify-content:space-between;align-items:center">
+                <strong>${c.name}</strong>
+                <button class="delete-btn" onclick="deleteComment(${index})">🚮</button>
+            </div>
+            <p>${c.msg}</p>
+            <div class="comment-time">${c.time}</div>
+        </div>`;
+    });
+}
+renderComments();
+function deleteComment(index){
+    if(confirm("Như muối bỏ bể :/")){
+        let data = JSON.parse(localStorage.getItem("comments")) || [];
+        data.splice(index, 1);
+        localStorage.setItem("comments", JSON.stringify(data));
+        renderComments();
+    }
+}
+</script>
+
+</body>
 </html>
-
